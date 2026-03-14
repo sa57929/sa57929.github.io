@@ -1,3 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Manrope:wght@400;500&display=swap');
+
+:root {
+  --bg: #dfe9d4;
+  --paper: #eef3e4;
+  --paper-2: #e4ecd7;
+  --text: #2f3728;
+  --muted: #5e6a4f;
+  --accent: #5f7a42;
+  --accent-2: #8b5e3c;
+  --border: #9aac87;
+  --shadow: rgba(80, 90, 60, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #ecfbe6;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+body::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 12rem;
+  width: 160px;
+  height: 160px;
+  background: url('./assets/twyre.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  right: 2rem;
+  bottom: 4rem;
+  width: 130px;
+  height: 130px;
+  background: url('./assets/symbol.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 1;
+  pointer-events: none;
+}
+
+header {
+  min-height: 18vh;
+  padding: 1.5rem 2rem 0.5rem 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+nav li {
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--accent-2);
+}
+
+.character-portrait {
+  width: 120px;
+  height: 120px;
+  background: url('./assets/haruspex_icon.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background-color: var(--paper);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.18);
+}
+
+h1 {
+  margin: 0 auto 1.5rem auto;
+  width: fit-content;
+  max-width: 90%;
+  text-align: center;
+  font-family: 'Alegreya', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 0.6rem 1.4rem;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  box-shadow: 6px 6px 0 rgba(120, 130, 90, 0.12);
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1rem 2rem 3rem 2rem;
+  position: relative;
+}
+
+.left {
+  width: 38%;
+  position: relative;
+}
+
+.character-img {
+  width: 100%;
+  height: 72vh;
+  background: url('./assets/haruspex.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 2px solid var(--border);
+  box-shadow: 0 12px 24px var(--shadow);
+}
+
+.right {
+  width: 52%;
+}
+
+h2 {
+  margin: 0 0 0.7rem 0;
+  font-family: 'Alegreya', serif;
+  font-size: 1.7rem;
+  color: var(--accent-2);
+}
+
+section {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  padding: 1.2rem;
+  margin-bottom: 1.4rem;
+  box-shadow: 4px 4px 0 rgba(120, 130, 90, 0.08);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+footer {
+  padding: 1rem 2rem 2rem 2rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+
+.character-name::after {
+  content: 'Artemy Burakh';
+}
+
+.character-title::after {
+  content: 'Opis: Haruspik Burakh, Chirurg, Morderca, Menkhu';
+}
+
+.character-role::after {
+  content: 'Fabuła: Ojcobójca na włościach';
+}
+
+.character-ending::after {
+  content: 'Zakończenie: Każdy wybór jest poprawny, jeśli jest wolny';
 }

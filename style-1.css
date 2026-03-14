@@ -1,3 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap');
+
+:root {
+  --bg: #120909;
+  --panel: #221313;
+  --panel-2: #2f1a1a;
+  --text: #eadfda;
+  --muted: #b79d95;
+  --accent: #8f2323;
+  --accent-2: #c8b08c;
+  --border: #5a2a2a;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #dfecff;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  right: 2rem;
+  top: calc(200px + 7rem + 6rem + 200px + 4rem);
+  ;
+  aspect-ratio: 1;
+  width: 200px;
+
+  background: url('./assets/revolver.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  right: 2rem;
+  top: calc(200px + 7rem + 6rem);
+  aspect-ratio: 1;
+  width: 200px;
+
+  background: url('./assets/bottle.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
+  pointer-events: none;
+}
+
+header {
+  padding: 1.5rem 2rem 0 2rem;
+  position: relative;
+}
+
+nav {
+  width: 60%;
+  margin-left: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.2rem;
+}
+
+nav a:hover {
+  color: var(--text);
+  border-bottom: 1px solid var(--accent);
+}
+
+.character-portrait {
+  position: fixed;
+  right: 2rem;
+  top: 1rem;
+  width: 250px;
+  height: 300px;
+  background: url('./assets/bachelor_icon.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border);
+  background-color: var(--panel);
+  padding: 0.5rem;
+}
+
+h1 {
+  width: 70%;
+  margin: 1rem 0 2rem 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  letter-spacing: 0.02em;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+}
+
+main {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0 2rem 3rem 2rem;
+}
+
+.left {
+  width: 34%;
+  position: sticky;
+  top: 1rem;
+}
+
+.character-img {
+  width: 100%;
+  height: 78vh;
+  background: url('./assets/bachelor.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 30px var(--shadow);
+}
+
+.right {
+  width: 46%;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1.8rem;
+  box-shadow: 0 0 30px var(--shadow);
+}
+
+h2 {
+  margin: 2rem 0 0.8rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+section {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+footer {
+  padding: 1rem 2rem 2rem 2rem;
+  color: var(--muted);
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+
+.character-name::after {
+  content: 'Daniil Dankovsky';
+}
+
+.character-title::after {
+  content: 'Opis: Doktor Dankovsky i jego Thanatica';
+}
+
+.character-role::after {
+  content: 'Fabuła: Lekarz ze stolicy w Miasteczku Gorkhon';
+}
+
+.character-ending::after {
+  content: 'Zakończenie: Medicum morbo adhibere';
 }
