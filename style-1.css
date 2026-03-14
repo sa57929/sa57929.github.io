@@ -59,9 +59,43 @@ body::after {
   pointer-events: none;
 }
 
+.underlay {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  inset: 0;
+  background-image: url('./assets/noise-texture.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.2;
+  filter: brightness(0.7);
+  overflow: hidden;
+}
+
 header {
   padding: 1.5rem 2rem 0 2rem;
   position: relative;
+}
+
+header::after {
+  content: "";
+  position: fixed;
+  left: -1rem;
+  bottom: -20rem;
+  aspect-ratio: 1;
+  width: 800px;
+  transform: translateX(-5deg);
+  background: url('./assets/gloves.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -4;
+  opacity: 0.7;
+  pointer-events: none;
 }
 
 nav {
@@ -132,17 +166,30 @@ main {
   width: 34%;
   position: sticky;
   top: 1rem;
+
+
+  background-image: url('./assets/ink-texture.png');
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+  opacity: 1;
+  pointer-events: none;
+
 }
 
 .character-img {
   width: 100%;
-  height: 78vh;
+  max-height: 72vh;
+  aspect-ratio: 945/1358;
   background: url('./assets/bachelor.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   border: 1px solid var(--border);
   box-shadow: 0 0 30px var(--shadow);
+
+
 }
 
 .right {
@@ -152,6 +199,21 @@ main {
   border: 1px solid var(--border);
   padding: 1.8rem;
   box-shadow: 0 0 30px var(--shadow);
+}
+
+.right .note::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  transform: scale(1.5);
+  margin-right: 0.5rem;
+  background: url('./assets/bottle.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  vertical-align: middle;
 }
 
 h2 {
@@ -164,6 +226,16 @@ h2 {
 
 h2:first-child {
   margin-top: 0;
+}
+
+
+h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 1px;
+  margin-top: 0.35rem;
+  background: var(--accent);
 }
 
 section {
@@ -187,6 +259,76 @@ footer {
 }
 
 
+
+.subtitle {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.meta-strip {
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.meta-item {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-2);
+}
+
+.epigraph {
+  margin: 0 0 1.6rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.image-caption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+section {
+  position: relative;
+}
+
+.section-mark::before {
+  content: "§";
+  position: absolute;
+  top: -0.2rem;
+  right: 0;
+  color: var(--accent);
+  opacity: 0.35;
+  font-size: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.note {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  background: rgba(143, 35, 35, 0.08);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+
 .character-name::after {
   content: 'Daniil Dankovsky';
 }
@@ -201,4 +343,32 @@ footer {
 
 .character-ending::after {
   content: 'Zakończenie: Medicum morbo adhibere';
+}
+
+.subtitle::after {
+  content: "thanatica / lekarz szukający cudu / cogito ergo sum";
+}
+
+.image-caption::after {
+  content: "Jesteśmy tylko pionami na tej strasznej szachownicy, gdzie każde pole jest ciemniejsze, niż możemy to sobie wyobrazić.";
+}
+
+.meta-one::after {
+  content: "cel: znaleźć nieśmiertelnego";
+}
+
+.meta-two::after {
+  content: "status: porażka";
+}
+
+.meta-three::after {
+  content: "pacjent: gorkhon";
+}
+
+.epigraph::after {
+  content: "Najpierw ucieszyłem się, że to nie dżuma... Teraz tego żałuję.";
+}
+
+.note::after {
+  content: "Obserwacja: Rewolwer to doskonały tłumacz.";
 }
