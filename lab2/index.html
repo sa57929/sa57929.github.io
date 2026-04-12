@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alicja Slepowronska (57929) - PTW LAB B</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <main class="app">
+        <section class="todo-card">
+            <h1>Lista zadan</h1>
+
+            <label class="label" for="searchInput">Szukaj zadan</label>
+            <div class="search-box">
+                <input id="searchInput" type="text" placeholder="Szukaj...">
+            </div>
+
+            <div id="messageBox" class="message"></div>
+
+            <ul id="taskList" class="task-list">
+
+            </ul>
+
+            <form id="taskForm" class="task-form">
+                <label class="label" for="taskInput">Treść zadania</label>
+                <input id="taskInput" name="task" type="text" placeholder="Co do zrobienia..." required>
+
+                <label class="label" for="deadlineInput">Termin wykonania</label>
+                <input id="deadlineInput" name="deadline" type="datetime-local">
+
+                <button type="submit">+</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

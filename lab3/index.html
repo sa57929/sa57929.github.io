@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alicja Slepowronska (57929) - PTW LAB C</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="leaflet-1.9.4/leaflet.css" />
+    <script src="leaflet-1.9.4/leaflet-src.js"></script>
+    <script src="leaflet-1.9.4/leaflet-providers.js"></script>
+    <script src="leaflet-1.9.4/leaflet-image.js"></script>
+
+</head>
+
+<body>
+    <div class="col">
+        <div id="map"></div>
+
+        <div class="col">
+            <canvas id="puzzle"></canvas>
+            <div class="row">
+                <button id="btn-locate">Locate</button>
+                <button id="btn-randomloc">Random Location</button>
+                <button id="btn-puzzlestart">Start!</button>
+            </div>
+        </div>
+    </div>
+    <div id="win-overlay">
+        <div id="win-popup">
+            <h2>Puzzle Solved!</h2>
+            <p>Completed in <span id="win-moves"></span> moves</p>
+            <p>Minimum possible: <span id="win-minswaps"></span> moves</p>
+            <p>Time: <span id="win-time"></span></p>
+            <button id="btn-winclose">Close</button>
+        </div>
+    </div>
+</body>
+
+</html>
