@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Alicja (57929) - PTW LAB D</title>
+
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+        <script src="scripts.js" defer></script>
+    </head>
+    <body>
+        <main class="column">
+            <h1>Rest Weather</h1>
+            <div class="row searchrow">
+                <input type="text" id="searchbox" placeholder="Wpisz adres / miasto..." />
+                <button id="searchbutton">Pogoda</button>
+            </div>
+
+            <div class="errorbox" id="errorbox"></div>
+
+            <section class="current">
+                <h2>Pogoda bieżąca</h2>
+                <div class="weatherbox column" id="currentbox">
+                    <span class="datetime"><span class="datetimeVal"></span></span>
+                    <div class="info row">
+                        <div class="icon"></div>
+                        <div class="info column">
+                            <span class="cityname"><span class="citynameVal"></span></span>
+                            <span class="realtemp"
+                                ><span class="realtempVal"></span> °C</span
+                            >
+                            <span class="felttemp"
+                                >Odczuwalna:
+                                <span class="felttempVal"></span> °C</span
+                            >
+                            <span class="weather"
+                                ><span class="weatherval"></span
+                            ></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="forecast">
+                <h2>Prognoza 5-dniowa</h2>
+                <div class="forecastbox row" id="forecastbox"></div>
+            </section>
+        </main>
+    </body>
+</html>
