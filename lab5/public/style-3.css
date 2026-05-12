@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+
+:root {
+  --bg: #ece7d8;
+  --paper: #f7f1df;
+  --paper-dark: #d8c7a3;
+  --text: #35251f;
+  --muted: #74604e;
+  --accent: #b21e2b;
+  --accent-2: #263d32;
+  --border: #9a7b53;
+  --shadow: rgba(57, 36, 22, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: 'Source Serif 4', serif;
+  overflow-x: hidden;
+  background-color: var(--paper-dark);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.underlay {
+ display: none;
+}
+
+#styleSelector {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem;
+  background: rgb(247, 241, 223);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(4px);
+}
+
+#styleSelector button {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--paper);
+  color: var(--accent-2);
+  padding: 0.45rem 0.8rem;
+  font: 600 0.78rem 'Cinzel', serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#styleSelector button.active,
+#styleSelector button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff8e8;
+}
+
+header {
+  padding: 1.5rem 2rem 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font: 600 0.75rem 'Cinzel', serif;
+  border-bottom: 1px solid transparent;
+}
+
+nav a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.character-portrait {
+  width: 170px;
+  height: 210px;
+  justify-self: end;
+  background:
+    radial-gradient(circle at 50% 30%, #fff8e8 0 8%, transparent 9%),
+    linear-gradient(160deg, transparent 0 38%, rgba(178, 30, 43, 0.75) 39% 61%, transparent 62%),
+    linear-gradient(90deg, transparent 0 42%, #2c2b24 43% 57%, transparent 58%),
+    var(--paper-dark);
+  border: 2px solid var(--accent);
+  box-shadow: 10px 10px 0 rgba(38, 61, 50, 0.16);
+  position: relative;
+}
+
+.character-portrait::before,
+.character-portrait::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  width: 48px;
+  height: 80px;
+  border: 2px solid rgba(38, 61, 50, 0.45);
+}
+
+.character-portrait::before {
+  left: 20px;
+  transform: rotate(-8deg);
+}
+
+.character-portrait::after {
+  right: 20px;
+  transform: rotate(8deg);
+}
+
+h1 {
+  margin: 0.8rem auto 2rem auto;
+  width: min(960px, calc(100% - 4rem));
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  line-height: 1.08;
+  text-align: center;
+  color: var(--accent);
+  background: rgba(247, 241, 223, 0.72);
+  border: 1px solid var(--border);
+  padding: 1.1rem 1.5rem;
+  box-shadow: 0 14px 28px var(--shadow);
+}
+
+.subtitle {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--accent-2);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(260px, 34%) 1fr;
+  gap: 2rem;
+  padding: 0 2rem 3rem 2rem;
+}
+
+.left {
+  position: sticky;
+  top: 5rem;
+}
+
+.character-img {
+  min-height: 70vh;
+  background:
+    radial-gradient(circle at 50% 13%, #f9f1dc 0 42px, #26231f 43px 58px, transparent 59px),
+    linear-gradient(90deg, transparent 0 34%, #b21e2b 35% 45%, transparent 46% 54%, #b21e2b 55% 65%, transparent 66%),
+    linear-gradient(180deg, transparent 0 19%, #2a3028 20% 32%, #efe2bd 33% 100%);
+  border: 2px solid var(--accent-2);
+  box-shadow: 12px 12px 0 rgba(178, 30, 43, 0.18);
+}
+
+.image-caption {
+  margin: 0.8rem 0 0 0;
+  padding: 0.7rem;
+  background: rgb(247, 241, 223);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}
+
+.right {
+  background: rgb(247, 241, 223);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  box-shadow: 0 14px 28px var(--shadow);
+}
+
+.meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.3rem;
+}
+
+.meta-item {
+  padding: 0.45rem 0.7rem;
+  background: var(--accent-2);
+  color: #fff8e8;
+  font: 600 0.72rem 'Cinzel', serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.epigraph {
+  margin: 0 0 1.4rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(216, 199, 163, 0.72);
+  color: var(--muted);
+  font-style: italic;
+}
+
+h2 {
+  margin: 1.8rem 0 0.7rem 0;
+  color: var(--accent);
+  font-family: 'Cinzel', serif;
+  font-size: 1.55rem;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+h3 {
+  margin: 1.2rem 0 0.6rem 0;
+  color: var(--accent-2);
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+}
+
+section {
+  position: relative;
+  margin-bottom: 1.4rem;
+  padding: 1.15rem;
+  background: rgba(255, 248, 232, 0.68);
+  border: 1px solid rgb(154, 123, 83);
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0.45rem;
+  border: 1px dashed rgba(178, 30, 43, 0.28);
+  pointer-events: none;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.section-mark::before {
+  content: "✣";
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.55rem;
+  color: var(--accent);
+  opacity: 0.38;
+  font-size: 1.7rem;
+}
+
+.note {
+  display: none;
+}
+
+footer {
+  padding: 1rem 2rem 2rem 2rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.character-name::after {
+  content: 'Clara';
+}
+
+.character-title::after {
+  content: 'Opis: Poświęcona, święta i oszustka';
+}
+
+.character-role::after {
+  content: 'Fabuła: cud w rękach dziecka';
+}
+
+.character-bound::after {
+  content: 'Między winą, wiarą i cudem';
+}
+
+.character-ending::after {
+  content: 'Zakończenie: zbawienie nie wygląda niewinnie';
+}
+
+.subtitle::after {
+  content: 'uzdrowicielka / siostra / miraż';
+}
+
+.image-caption::after {
+  content: 'Niewinne dłonie nie znaczą czystych intencji.';
+}
+
+.meta-one::after {
+  content: 'dar: leczenie';
+}
+
+.meta-two::after {
+  content: 'cień: sobowtór';
+}
+
+.meta-three::after {
+  content: 'los: wybrana';
+}
+
+.epigraph::after {
+  content: 'Każdy chce cudu, dopóki cud nie zaczyna czegoś żądać.';
+}
+
+
+@media (max-width: 375px) {
+  #styleSelector {
+    flex-direction: column;
+    align-items: stretch;
+    position: static;
+  }
+
+  header {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .character-portrait {
+    justify-self: center;
+    width: 120px;
+    height: 150px;
+  }
+
+  h1 {
+    width: calc(100% - 2rem);
+    font-size: 1.65rem;
+    padding: 0.9rem;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .left {
+    position: static;
+  }
+
+  .character-img {
+    min-height: 340px;
+  }
+
+  .right {
+    padding: 1rem;
+  }
+
+  .meta-strip {
+    display: block;
+  }
+
+  .meta-item {
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+}

@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap');
+
+:root {
+  --bg: #120909;
+  --panel: #221313;
+  --panel-2: #2f1a1a;
+  --text: #eadfda;
+  --muted: #b79d95;
+  --accent: #8f2323;
+  --accent-2: #c8b08c;
+  --border: #5a2a2a;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  right: 2rem;
+  top: calc(200px + 7rem + 6rem + 200px + 4rem);
+  ;
+  aspect-ratio: 1;
+  width: 200px;
+
+  background: url('./public/assets/revolver.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  right: 2rem;
+  top: calc(200px + 7rem + 6rem);
+  aspect-ratio: 1;
+  width: 200px;
+
+  background: url('./public/assets/bottle.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
+  pointer-events: none;
+}
+
+.underlay {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  inset: 0;
+  background-image: url('./public/assets/noise-texture.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.2;
+  filter: brightness(0.7);
+  overflow: hidden;
+}
+
+header {
+  padding: 1.5rem 2rem 0 2rem;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: fixed;
+  left: -1rem;
+  bottom: -20rem;
+  aspect-ratio: 1;
+  width: 800px;
+  transform: translateX(-5deg);
+  background: url('./public/assets/gloves.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -4;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+nav {
+  width: 60%;
+  margin-left: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.2rem;
+}
+
+nav a:hover {
+  color: var(--text);
+  border-bottom: 1px solid var(--accent);
+}
+
+.character-portrait {
+  position: fixed;
+  right: 2rem;
+  top: 1rem;
+  width: 250px;
+  height: 300px;
+  background: url('./public/assets/bachelor_icon.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border);
+  background-color: var(--panel);
+  padding: 0.5rem;
+}
+
+h1 {
+  width: 70%;
+  margin: 1rem 0 2rem 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  letter-spacing: 0.02em;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+}
+
+main {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0 2rem 3rem 2rem;
+}
+
+.left {
+  width: 34%;
+  position: sticky;
+  top: 1rem;
+
+
+  background-image: url('./public/assets/ink-texture.png');
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-blend-mode: color-burn;
+  opacity: 1;
+  pointer-events: none;
+
+}
+
+.character-img {
+  width: 100%;
+  max-height: 72vh;
+  aspect-ratio: 945/1358;
+  background: url('./public/assets/bachelor.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 30px var(--shadow);
+
+
+}
+
+.right {
+  width: 46%;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1.8rem;
+  box-shadow: 0 0 30px var(--shadow);
+}
+
+.right .note::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  transform: scale(1.5);
+  margin-right: 0.5rem;
+  background: url('./public/assets/bottle.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  vertical-align: middle;
+}
+
+h2 {
+  margin: 2rem 0 0.8rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+
+h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 1px;
+  margin-top: 0.35rem;
+  background: var(--accent);
+}
+
+h3 {
+  
+    margin: 1.5rem 0 0.8rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--muted);
+    font-weight: 600;
+  
+}
+
+section {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+footer {
+  padding: 1rem 2rem 2rem 2rem;
+  color: var(--muted);
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+
+
+.subtitle {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.meta-strip {
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.meta-item {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-2);
+}
+
+.epigraph {
+  margin: 0 0 1.6rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.image-caption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+section {
+  position: relative;
+}
+
+.section-mark::before {
+  content: "§";
+  position: absolute;
+  top: -0.2rem;
+  right: 0;
+  color: var(--accent);
+  opacity: 0.35;
+  font-size: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.note {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  background: rgba(143, 35, 35, 0.08);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+
+.character-name::after {
+  content: 'Daniil Dankovsky';
+}
+
+.character-title::after {
+  content: 'Opis: Doktor Dankovsky i jego Thanatica';
+}
+
+.character-role::after {
+  content: 'Fabuła: Lekarz ze stolicy w Miasteczku Gorkhon';
+}
+
+.character-bound::after {
+  content: "Bitwa z plagą";
+}
+
+.character-ending::after {
+  content: 'Zakończenie: Medicum morbo adhibere';
+}
+
+.subtitle::after {
+  content: "thanatica / lekarz szukający cudu / cogito ergo sum";
+}
+
+.image-caption::after {
+  content: "Jesteśmy tylko pionami na tej strasznej szachownicy, gdzie każde pole jest ciemniejsze, niż możemy to sobie wyobrazić.";
+}
+
+.meta-one::after {
+  content: "cel: znaleźć nieśmiertelnego";
+}
+
+.meta-two::after {
+  content: "status: porażka";
+}
+
+.meta-three::after {
+  content: "pacjent: gorkhon";
+}
+
+.epigraph::after {
+  content: "Najpierw ucieszyłem się, że to nie dżuma... Teraz tego żałuję.";
+}
+
+.note::after {
+  content: "Obserwacja: Rewolwer to doskonały tłumacz.";
+}
+
+
+@media (max-width: 375px) {
+
+  body::before,
+  body::after {
+    width: 82px;
+    right: 0.5rem;
+    opacity: 0.22;
+  }
+
+  body::before {
+    top: auto;
+    bottom: 5.5rem;
+  }
+
+  body::after {
+    top: auto;
+    bottom: 11rem;
+  }
+
+  .underlay {
+    opacity: 0.12;
+  }
+
+  header {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  header::after {
+    width: 360px;
+    left: -6rem;
+    bottom: -8rem;
+    opacity: 0.18;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    gap: 0.6rem;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+
+  .character-portrait {
+    position: static;
+    width: 120px;
+    height: 145px;
+    margin: 1rem auto 0 auto;
+    display: block;
+  }
+
+  h1 {
+    width: auto;
+    margin: 1rem 1rem 1.2rem 1rem;
+    font-size: 1.85rem;
+    line-height: 1.15;
+    padding-left: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.72rem;
+    line-height: 1.45;
+    letter-spacing: 0.12em;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .left {
+    position: static;
+    top: auto;
+    background-size: cover;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .character-img {
+    max-height: none;
+    height: 320px;
+    background-position: center top;
+    background-size: contain;
+  }
+
+  .image-caption {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+
+  .right {
+    padding: 1rem;
+    box-shadow: 0 0 18px var(--shadow);
+  }
+
+  .meta-strip {
+    margin-bottom: 1rem;
+
+    padding: 0.7rem 0.75rem;
+  }
+
+  .meta-item {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+  }
+
+  .epigraph {
+    margin-bottom: 1rem;
+    padding: 0.75rem 0.85rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  h2 {
+    margin: 1.3rem 0 0.6rem 0;
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  h2::after {
+    width: 52px;
+  }
+
+  section {
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.9rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .section-mark::before {
+    font-size: 1.4rem;
+    top: -0.05rem;
+  }
+
+  .note {
+    margin-top: 0.8rem;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .right .note::before {
+    width: 18px;
+    height: 18px;
+    transform: none;
+    margin-right: 0.35rem;
+  }
+
+  footer {
+    padding: 0.5rem 1rem 1.5rem 1rem;
+    text-align: center;
+    font-size: 0.82rem;
+  }
+}
+#styleSelector {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem;
+  background: rgba(18, 9, 9, 0.88);
+  border-bottom: 1px solid var(--border);
+}
+
+#styleSelector button {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--muted);
+  padding: 0.45rem 0.8rem;
+  font: 600 0.75rem 'IBM Plex Sans', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#styleSelector button.active,
+#styleSelector button:hover {
+  background: var(--accent);
+  color: var(--text);
+}
