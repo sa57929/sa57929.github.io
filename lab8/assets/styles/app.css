@@ -1,0 +1,59 @@
+body {
+    background: #eef7fb;
+}
+
+.app-navbar {
+    background: linear-gradient(90deg, #d9f3ff, #ffffff);
+    border-bottom: 1px solid #c7e5ef;
+}
+
+.app-navbar .navbar-brand {
+    color: #1f5f75;
+}
+
+.app-navbar .nav-link {
+    color: #24586a;
+}
+
+.app-card {
+    border: none;
+}
+
+.app-header {
+    background: #ffffff;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.app-footer {
+    background: #d9f3ff;
+    color: #24586a;
+}
+
+.table th {
+    color: #24586a;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+    .app-header {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+}

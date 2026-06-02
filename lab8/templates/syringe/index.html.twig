@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Syringe index{% endblock %}
+
+{% block body %}
+    <h1>Syringe index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Capacity</th>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for syringe in syringes %}
+            <tr>
+                <td>{{ syringe.id }}</td>
+                <td>{{ syringe.capacity }}</td>
+                <td>{{ syringe.name }}</td>
+                <td>{{ syringe.size }}</td>
+                <td>{{ syringe.description }}</td>
+                <td>
+                    <a href="{{ path('app_syringe_show', {'id': syringe.id}) }}">show</a>
+                    <a href="{{ path('app_syringe_edit', {'id': syringe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_syringe_new') }}">Create new</a>
+{% endblock %}
