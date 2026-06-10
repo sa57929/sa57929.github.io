@@ -1,0 +1,22 @@
+<%- include('../partials/header', { title: title }) %>
+
+<section class="app-header">
+  <h1 class="mb-1">Create Syringe</h1>
+</section>
+
+<div class="row justify-content-center">
+  <div class="col-lg-7">
+    <div class="card app-card">
+      <div class="card-body">
+        <form method="post" action="/syringe/new">
+          <%- include('_form', { syringe: syringe }) %>
+
+          <button class="btn btn-success" type="submit">Save</button>
+          <a class="btn btn-outline-secondary" href="/syringe">back to list</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

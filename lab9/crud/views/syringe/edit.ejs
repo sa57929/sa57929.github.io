@@ -1,0 +1,31 @@
+<%- include('../partials/header', { title: title }) %>
+
+<section class="app-header">
+  <h1 class="mb-1">Adjust Instrument</h1>
+</section>
+
+<div class="row justify-content-center">
+  <div class="col-lg-7">
+    <div class="card app-card">
+      <div class="card-body">
+        <form method="post" action="/syringe/<%= syringe.id %>/edit">
+          <%- include('_form', { syringe: syringe }) %>
+
+          <button class="btn btn-success" type="submit">Finalize</button>
+          <a class="btn btn-outline-secondary" href="/syringe">back to list</a>
+        </form>
+
+        <form
+          class="mt-3"
+          method="post"
+          action="/syringe/<%= syringe.id %>/delete"
+          onsubmit="return confirm('Certain?');"
+        >
+          <button class="btn btn-outline-danger" type="submit">Remove</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

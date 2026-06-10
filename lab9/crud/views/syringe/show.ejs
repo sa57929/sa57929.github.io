@@ -1,0 +1,49 @@
+<%- include('../partials/header', { title: title }) %>
+
+<section class="app-header">
+  <h1 class="mb-1">Inscryption</h1>
+</section>
+
+<div class="card app-card">
+  <div class="card-body">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>Id</th>
+          <td><%= syringe.id %></td>
+        </tr>
+        <tr>
+          <th>Capacity</th>
+          <td><%= syringe.capacity %></td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td><%= syringe.name %></td>
+        </tr>
+        <tr>
+          <th>Size</th>
+          <td><%= syringe.size %></td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td><%= syringe.description || '' %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="d-flex flex-wrap gap-2">
+      <a class="btn btn-outline-secondary" href="/syringe">back to list</a>
+      <a class="btn btn-primary" href="/syringe/<%= syringe.id %>/edit">edit</a>
+
+      <form
+        method="post"
+        action="/syringe/<%= syringe.id %>/delete"
+        onsubmit="return confirm('Certainly?');"
+      >
+        <button class="btn btn-outline-danger" type="submit">Remove</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

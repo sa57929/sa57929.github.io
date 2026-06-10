@@ -1,0 +1,43 @@
+<%- include('../partials/header', { title: title }) %>
+
+<section class="app-header d-flex justify-content-between align-items-center">
+  <div>
+    <h1 class="mb-1">Syringesss</h1>
+  </div>
+  <a class="btn btn-primary" href="/syringe/new">Create new</a>
+</section>
+
+<div class="card app-card">
+  <div class="card-body">
+    <table class="table table-striped align-middle">
+      <thead>
+        <tr>
+          <th>Id</th><th>Capacity</th>
+          <th>Name</th><th>Size</th>
+          <th>Description</th><th>Actions</th></tr>
+      </thead>
+
+      <tbody>
+        <% if (syringes.length === 0) { %>
+        <tr>
+          <td colspan="6">there are no instruments</td>
+        </tr>
+        <% } %> <% syringes.forEach(function (syringe) { %>
+        <tr>
+          <td><%= syringe.id %></td>
+          <td><%= syringe.capacity %></td>
+          <td><%= syringe.name %></td>
+          <td><%= syringe.size %></td>
+          <td><%= syringe.description || '' %></td>
+          <td>
+            <a href="/syringe/<%= syringe.id %>">show</a>
+            <a href="/syringe/<%= syringe.id %>/edit">edit</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
