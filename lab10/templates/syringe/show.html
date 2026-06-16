@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %} {{ syringe.name }} ({{ syringe.id
+}}) {% endblock %} {% block body_class %} show {% endblock %} {% block content
+%}
+
+<h1>{{ syringe.name }}</h1>
+
+<article>
+  <p>
+    <strong>Capacity:</strong>
+    {{ syringe.capacity_ml }} ml
+  </p>
+
+  <p>
+    <strong>Calibre of the Needle:</strong>
+    {{ syringe.needle_size }}
+  </p>
+
+  <p>
+    <strong>Inscription:</strong>
+  </p>
+
+  <p style="white-space: pre-line">{{ syringe.description }}</p>
+</article>
+
+<ul class="action-list">
+  <li>
+    <a href="{{ url_for('syringe_index') }}"> Return to your instruments </a>
+  </li>
+
+  <li>
+    <a
+      href="{{ url_for(
+            'syringe_edit',
+            syringe_id=syringe.id
+        ) }}"
+    >
+      Adjust
+    </a>
+  </li>
+</ul>
+
+{% endblock %}

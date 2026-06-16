@@ -1,0 +1,36 @@
+{% if error %}
+<p>
+    <strong>{{ error }}</strong>
+</p>
+{% endif %}
+
+<div class="form-group">
+    <label for="name">Label</label>
+
+    <input type="text" id="name" name="name" value="{{ syringe.get('name', '') }}" required />
+</div>
+
+<div class="form-group">
+    <label for="capacity_ml">Capacity [ml]</label>
+
+    <input type="number" id="capacity_ml" name="capacity_ml" value="{{ syringe.get('capacity_ml', '') }}" required />
+</div>
+
+<div class="form-group">
+    <label for="needle_size">Needle size</label>
+
+    <input type="text" id="needle_size" name="needle_size" value="{{ syringe.get('needle_size', '') }}" required />
+</div>
+
+<div class="form-group">
+    <label for="description">Inscription</label>
+
+    <textarea id="description" name="description" required>
+{{ syringe.get('description', '') }}</textarea>
+</div>
+
+<div class="form-group">
+    <label></label>
+
+    <input type="submit" value="Submit" />
+</div>

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Adjust Instrument
+    {{ syringe.name }}
+    ({{ syringe.id }})
+{% endblock %}
+
+{% block body_class %}
+    edit
+{% endblock %}
+
+{% block content %}
+
+<h1>
+    Adjust Instrument
+    {{ syringe.name }}
+    ({{ syringe.id }})
+</h1>
+
+<form
+    method="post"
+    class="edit-form"
+>
+    {% include "syringe/_form.html" %}
+</form>
+
+<ul class="action-list">
+    <li>
+        <a href="{{ url_for('syringe_index') }}">
+            Return to toolbox
+        </a>
+    </li>
+
+    <li>
+        <form
+            action="{{ url_for(
+                'syringe_delete',
+                syringe_id=syringe.id
+            ) }}"
+            method="post"
+        >
+            <input
+                type="submit"
+                value="Delete"
+                onclick="return confirm('Do you wish?')"
+            >
+        </form>
+    </li>
+</ul>
+
+{% endblock %}

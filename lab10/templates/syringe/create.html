@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Create Syringe
+{% endblock %}
+
+{% block body_class %}
+    edit
+{% endblock %}
+
+{% block content %}
+
+<h1>Create the tool</h1>
+
+<form
+    method="post"
+    class="edit-form"
+>
+    {% include "syringe/_form.html" %}
+</form>
+
+<a href="{{ url_for('syringe_index') }}">
+    Back to list
+</a>
+
+{% endblock %}

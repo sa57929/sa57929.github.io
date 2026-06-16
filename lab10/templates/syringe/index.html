@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block title %} Instrumentorium {% endblock %} {%
+block body_class %} index {% endblock %} {% block content %}
+
+<h1>Instrument List</h1>
+
+<a href="{{ url_for('syringe_create') }}"> Create Tool </a>
+
+<ul class="index-list">
+  {% for syringe in syringes %}
+
+  <li>
+    <h3>{{ syringe.name }}</h3>
+
+    <p> Capacity: {{ syringe.capacity_ml }} ml, the Needle: {{ syringe.needle_size }}</p>
+
+    <ul class="action-list">
+      <li>
+        <a href="{{ url_for('syringe_show', syringe_id=syringe.id) }}">
+          Further information
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for( 'syringe_edit', syringe_id=syringe.id ) }}">
+          Adjust
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  {% else %}
+  <li>No instruments in database.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
