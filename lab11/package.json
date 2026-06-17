@@ -1,0 +1,27 @@
+{
+  "name": "pl.edu.zut.wi.sa57929",
+  "displayName": "Alicja 57929",
+  "version": "1.0.0",
+  "description": "Weather App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Alicja Ślepowrońska",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-android": "^15.0.0",
+    "cordova-browser": "^7.0.0",
+    "cordova-electron": "^4.0.0"
+  },
+  "cordova": {
+    "platforms": [
+      "browser",
+      "android",
+      "electron"
+    ]
+  }
+}
